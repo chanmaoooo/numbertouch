@@ -96,8 +96,8 @@
 
     setup() {
       const container = document.getElementById("container");
-      const PANEL_WIDTH = 50;
-      const BOARD_PADDING = 10;
+      const PANEL_WIDTH = 40;
+      const BOARD_PADDING = 6;
       container.style.width = PANEL_WIDTH*this.level + BOARD_PADDING*2 + "px";
     }
 

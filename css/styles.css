@@ -15,7 +15,7 @@ body {
 #board {
   list-style: none;
   margin: 0 0 8px;
-  padding: 10px;
+  padding: 6px;
   background: #fff;
   border-radius: 4px;
   display: flex;
@@ -24,20 +24,20 @@ body {
 
 #board li {
   background: #00aaff;
-  width: 40px;
-  height: 40px;
-  margin: 5px;
+  width: 32px;
+  height: 32px;
+  margin: 4px;
   cursor: pointer;
   border-radius: 4px;
-  line-height: 40px;
+  line-height: 32px;
   text-align: center;
-  box-shadow: 0 4px 0 #0088cc;
+  box-shadow: 0 3px 0 #0088cc;
 }
 
 #board li.pressed {
   background: #ccc;
   box-shadow: none;
-  margin-top: 9px;
+  margin-top: 7px;
   margin-bottom: 1px;
 }
 
