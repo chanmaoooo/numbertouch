@@ -1,0 +1,160 @@
+body {
+  background: #ccc;
+  color: #fff;
+  font-family: "Courier New", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+}
+
+#container {
+  margin: 16px auto;
+  position: relative;
+}
+
+#board {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#board li {
+  background: #00aaff;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  box-shadow: 0 4px 0 #0088cc;
+}
+
+#board li.pressed {
+  background: #ccc;
+  box-shadow: none;
+  margin-top: 9px;
+  margin-bottom: 1px;
+}
+
+#timer {
+  margin-bottom: 8px;
+  font-size: 20px;
+  text-align: right;
+}
+
+#btn {
+  cursor: pointer;
+  background: #f44336;
+  padding: 8px;
+  border-radius:4px;
+  text-align: center;
+  box-shadow: 0 4px 0 #d1483e;
+  margin-bottom: 8px;
+}
+
+#btn:active {
+  margin-top: 12px;
+  box-shadow: none;
+}
+
+
+#box1 {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  line-height: 80px;
+  font-size: 20px;
+  margin: 0 auto;
+  background: #fff;
+  color: #000;
+  width: 300px;
+  height: 80px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.4s;
+}
+
+#box1 > p {
+  margin: 0;
+}
+
+#box1 > #level {
+  font-size: 32px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.btn2 {
+  cursor: pointer;
+  background: #f44336;
+  color: #fff;
+  padding: 0;
+  border-radius:4px;
+  text-align: center;
+  box-shadow: 0 4px 0 #d1483e;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.btn2:active {
+  margin-top: 24px;
+  box-shadow: none;
+}
+
+.hidden {
+  transform: translateY(-500px);
+}
+
+#box2,#box3 {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+  color: #000;
+  width: 300px;
+  height:100px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.4s;
+}
+
+#box2 > p,#box3 > p {
+  font-size: 40px;
+  margin: 0;
+}
+
+#box2 > a, #box3 > a {
+  background: #f44336;
+  padding: 10px;
+  margin: 10px auto;
+  width: 200px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 28px;
+  border-radius: 24px;
+  box-shadow: 0 4px 0 #d1483e;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+#box2 > a:active, #box3 > a:active {
+  margin-top: 14px;
+  box-shadow: none;
+}
