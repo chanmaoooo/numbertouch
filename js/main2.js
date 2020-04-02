@@ -87,6 +87,9 @@
 
 
       const btn = document.getElementById("btn");
+      if(this.level==='1') {
+        btn.textContent = "Go!";
+      }
       btn.addEventListener("click", ()=> {
         this.start();
       });
