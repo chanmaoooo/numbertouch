@@ -119,6 +119,7 @@
       const timer = document.getElementById("timer");
       let timeLeft = this.timeLimit - (Date.now()-this.startTime);
       if(timeLeft<=0) {
+        this.currentNum = 0;
         clearTimeout(this.timeoutId);
         timer.textContent = "0.00";
         this.box2.classList.remove("hidden");
