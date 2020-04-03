@@ -86,13 +86,13 @@
       this.container = document.getElementById("container");
       // this.box1 = document.getElementById("box1");
       this.box2 = document.getElementById("box2");
+      this.btn = document.getElementById("btn");
+      this.timer = document.getElementById("timer");
 
-
-      const btn = document.getElementById("btn");
       if(this.level==='1') {
-        btn.textContent = "Go!";
+        this.btn.textContent = "Go!";
       }
-      btn.addEventListener("click", ()=> {
+      this.btn.addEventListener("click", ()=> {
         this.start();
       });
 
@@ -108,29 +108,43 @@
 
     start() {
       if(!this.stillPlaying) return;
-      if(typeof this.timeoutId !== undefined) {
+      if(this.btn.textContent === "RETRY") {
         clearTimeout(this.timeoutId);
+        this.btn.textContent = "START";
+        this.timer.textContent = "0.00";
+        this.reset();
+      }
+      else {
+        this.btn.textContent = "RETRY";
+        this.currentNum = 1;
+        this.board.activate();
+        this.startTime = Date.now();
+        this.runTimer();
       }
 
-      this.currentNum = 1;
-      this.board.activate();
-      this.startTime = Date.now();
-      this.runTimer();
+    }
+
+    reset() {
+      const board = document.getElementById("board");
+      for(let i=0; i<this.level**2; i++) {
+        const item = board.children[i];
+        item.classList.add("pressed");
+        item.textContent = '';
+      }
     }
 
     runTimer() {
-      const timer = document.getElementById("timer");
       let timeLeft = this.timeLimit - (Date.now()-this.startTime);
       if(timeLeft<=0) {
         this.currentNum = 0;
         this.stillPlaying = false;
         clearTimeout(this.timeoutId);
-        timer.textContent = "0.00";
+        this.timer.textContent = "0.00";
         this.box2.classList.remove("hidden");
         return;
       }
 
-      timer.textContent = (timeLeft/1000).toFixed(2);
+      this.timer.textContent = (timeLeft/1000).toFixed(2);
       this.timeoutId = setTimeout(()=> {
         this.runTimer();
       }, 10);
