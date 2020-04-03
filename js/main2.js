@@ -81,6 +81,7 @@
       this.currentNum = undefined;
       this.startTime = undefined;
       this.timeoutId = undefined;
+      this.stillPlaying = true;
       this.container = document.getElementById("container");
       // this.box1 = document.getElementById("box1");
       this.box2 = document.getElementById("box2");
@@ -105,6 +106,7 @@
     }
 
     start() {
+      if(!this.stillPlaying) return;
       if(typeof this.timeoutId !== undefined) {
         clearTimeout(this.timeoutId);
       }
@@ -120,6 +122,7 @@
       let timeLeft = this.timeLimit - (Date.now()-this.startTime);
       if(timeLeft<=0) {
         this.currentNum = 0;
+        this.stillPlaying = false;
         clearTimeout(this.timeoutId);
         timer.textContent = "0.00";
         this.box2.classList.remove("hidden");
