@@ -27,6 +27,7 @@
         this.game.addCurrentNum();
         if(this.game.getCurrentNum() === this.game.getLevel()**2+1) {
           clearTimeout(this.game.getTimeoutId());
+          this.game.reverseStillPlaying();
           this.box3.classList.remove("hidden");
         }
       }
@@ -149,6 +150,10 @@
 
     getLevel() {
       return this.level;
+    }
+
+    reverseStillPlaying() {
+      this.stillPlaying = false;
     }
   }
 
